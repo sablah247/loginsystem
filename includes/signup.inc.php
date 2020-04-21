@@ -15,11 +15,11 @@ if (isset ($_POST['submit'])) {
 
     //Error handlers
     //Check for empty fields
-    //if (empty($fullName) || empty($email) empty($dob) || empty($gender) || empty($username) || 
-    //empty($userpwd) || empty($postaladd) || empty($postcode)) {
-    //        header("Location: ../signup.php?signup=empty");
-    //        exit();
-    //} else {
+       if (empty($fullName) || empty($email) empty($dob) || empty($gender) || empty($username) || 
+           empty($userpwd) || empty($postaladd) || empty($postcode)) {
+            header("Location: ../signup.php?signup=empty");
+            exit();
+    } else {
         //check if input characters are valid
        if (!preg_match("/^[a-zA-Z]*$/", $fullName)) {
             header("Location: ../signup.php");
@@ -61,4 +61,5 @@ if (isset ($_POST['submit'])) {
     header("Location: ../signup.php");
     exit();
 }
+
 ?>
